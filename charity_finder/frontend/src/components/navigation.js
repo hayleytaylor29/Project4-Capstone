@@ -9,12 +9,11 @@ function Navigation(props) {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link href="/home">Home</Nav.Link>
-        <Nav.Link href="/search">Search</Nav.Link>
-        {/* <NavDropdown title="Search" id="basic-nav-dropdown" >
-          <NavDropdown.Item href="#action/3.0">By Organization Name</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.1">By Region</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">By Cause</NavDropdown.Item>
-        </NavDropdown> */}
+        <NavDropdown title="Search" id="basic-nav-dropdown" >
+          <NavDropdown.Item href="/orgsearch">By Organization Name</NavDropdown.Item>
+          <NavDropdown.Item href="/regionsearch">By Region</NavDropdown.Item>
+          <NavDropdown.Item href="/causesearch">By Cause</NavDropdown.Item>
+        </NavDropdown>
         <Container>
         <Nav.Link href="/newcharity">Add a New Charity</Nav.Link>
         </Container>
