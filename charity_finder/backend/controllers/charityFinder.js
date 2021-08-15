@@ -13,18 +13,40 @@ router.use(express.json({
 }))
 
 //Charity API
-const url = "https://api.pledge.to/v1/organizations/";
-const apiKey = process.env.PLEDGEAPI_KEY;
-const qOrg = "?q=red cross"
-// const limit = "&total_count=10"; -- can't seem to get this to work
-const searchOrganization = `${url}${qOrg}${apiKey}`
+// const url = "https://api.pledge.to/v1/organizations/";
+// const apiKey = process.env.PLEDGEAPI_KEY;
+// const qOrg = "?q=red cross"
+// // const limit = "&total_count=10"; -- can't seem to get this to work
+// const searchURL = `${url}${qOrg}${apiKey}`
 
-const charitySearch = async (search) => {
-    const response = await axios(searchOrganization)
-    const data = await response.json()
-    console.log(data)
-}
+// function App () {
+//     const [searchTerm, setSearchTerm] = React.useState(null);
 
-charitySearch(req.body.charitySearch)
 
-module.exports = router;
+//     React.useEffect(() => {
+//         axios.get(searchURL).then((response) => {
+//         setSearchTerm(response.data);
+//         });
+//     }, []);
+
+//     if (!searchTerm) return null;
+
+//     return (
+//         <ul>
+//             {}
+//         {/* <h1>{data.results.name}</h1>
+//         <p>{data.results.city}</p>
+//         <p>{data.results.profile_url}</p> */}
+//         </ul>
+//     );
+// }
+
+// const charitySearch = async (search) => {
+//     const response = await axios.get(searchURL)
+//     const data = await response.json()
+//     console.log(data)
+// }
+
+// charitySearch(req.body.charitySearch)
+
+// module.exports = router;

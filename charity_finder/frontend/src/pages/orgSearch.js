@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import OrgSearchResults from './searchResults';
 
 function OrgSearch(props) {
-    // console.log(props)
-    const [organ, setOrgan] = useState(null);
+    const [orgSearch, setOrgSearch] = useState(null);
     const handleChange = (event) => {
-        setOrgan(event.target.value)
+        setOrgSearch(event.target.value)
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        OrgSearchResults(organ)
+        OrgSearchResults(orgSearch)
+        console.log(orgSearch)
     }
     return(
         <div align="center">

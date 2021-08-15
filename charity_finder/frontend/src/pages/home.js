@@ -11,6 +11,7 @@ function Home() {
         <p>Thanks so much for stopping by and let us know if there's anything you think
             we can do to improve!
         </p>
+        <p>Powered by <a href="https://www.pledge.to/" target="blank">Pledge</a></p>
         </center>
         </div>
     )

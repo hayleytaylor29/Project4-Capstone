@@ -9,7 +9,7 @@ function Navigation(props) {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link href="/home">Home</Nav.Link>
-        <NavDropdown title="Search" id="basic-nav-dropdown" >
+        <NavDropdown title="Search" id="basic-nav-dropdown" variant="dark">
           <NavDropdown.Item href="/orgsearch">By Organization Name</NavDropdown.Item>
           <NavDropdown.Item href="/regionsearch">By Region</NavDropdown.Item>
           <NavDropdown.Item href="/causesearch">By Cause</NavDropdown.Item>

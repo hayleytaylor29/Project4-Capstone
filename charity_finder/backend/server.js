@@ -10,6 +10,7 @@ const app = express();
 const OrgSearch = require('../frontend/src/pages/orgSearch.js')
 const RegionSearch = require('../frontend/src/pages/regionSearch')
 const CauseSearch = require('../frontend/src/pages/causeSearch')
+const OrgSearchResults = require('../frontend/src/pages/searchResults')
 //SETUP MIDDLEWARE
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -25,6 +26,9 @@ app.get('/home', (req, res) => {
 })
 app.get('/orgsearch', (req, res) => {
     res.send(OrgSearch)
+})
+app.post('/orgsearchresults', (req, res) => {
+    res.send(OrgSearchResults)
 })
 app.get('/regionsearch', (req, res) => {
     res.send(RegionSearch)
