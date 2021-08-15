@@ -1,17 +1,20 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 // import OrgSearch from './orgSearch';
-require('dotenv').config()
 
 function OrgSearchResults(props) {
-    let [organ, setOrgan] = useState("");
+    const location = useLocation();
+    console.log(location);
+    let [organ, setOrgan] = useState([]);
+    let [userInput, setUserInput] = useState(location.state.organ);
     const url = "https://api.pledge.to/v1/organizations/";
-    const apiKey = "abb243068872ebda30fc59e90a307a47";
-    const qOrg = "?=red cross"
+    const apiKey = process.env.REACT_APP_PLEDGEAPI_KEY;
+    const qOrg = `?q=${userInput}`
     // const limit = "&total_count=10"; -- can't seem to get this to work
     const searchURL = `${url}${qOrg}`
-    
-    useEffect(() => {
+
+    const getOrg = useCallback(() => {
         axios({
             "method": "GET",
             "url": `${searchURL}`,
@@ -23,18 +26,24 @@ function OrgSearchResults(props) {
             }
         })
         .then((response) => {
-            setOrgan(response.data)
+            console.log(response.data.results)
+            setOrgan(response.data.results)
         })
         .catch((error) => {
             console.log(error)
         })
+    },
+    []);
+    
+    useEffect(() => {
+        getOrg();
     }, []);
     
     const loaded = () => {
         return(
             <div>
                 <h1>Search Results:</h1>
-                {organ.results.map((org) => {
+                {organ.map((org) => {
                     let orgURL = org.profile_url
                     // console.log(org.profile_url)
                     return (

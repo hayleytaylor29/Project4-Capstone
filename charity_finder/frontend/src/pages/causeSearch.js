@@ -1,14 +1,15 @@
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
+import OrgSearchResults from './searchResults';
 
 function CauseSearch(props) {
-    const [searchTerm, setSearchTerm] = React.useState(null);
+    const [searchTerm, setSearchTerm] = useState(null);
     const handleChange = (event) => {
         setSearchTerm(event.target.value)
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.charitySearch(searchTerm)
+        OrgSearchResults(searchTerm)
     }
     return(
         <div align="center" max-width="50%">
