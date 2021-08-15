@@ -6,12 +6,13 @@ import Footer from './components/footer';
 import OrgSearch from './pages/orgSearch.js';
 import RegionSearch from './pages/regionSearch';
 import CauseSearch from './pages/causeSearch'
+import OrgSearchResults from './pages/searchResults';
 
 function App() {
   return (
     <div>
     <Navigation />
-    <Switch />
+    <Switch>
       <Route exact path='/home'>
         <Home />
       </Route>
@@ -24,6 +25,10 @@ function App() {
       <Route path='/causesearch'>
         <CauseSearch />
       </Route>
+      <Route path='/orgsearchresults'>
+        <OrgSearchResults />
+      </Route>
+      </Switch>
     <Footer />
     </div>
   );

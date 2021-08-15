@@ -1,26 +1,31 @@
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import OrgSearchResults from './searchResults';
 
 function OrgSearch(props) {
-    const [searchTerm, setSearchTerm] = React.useState(null);
+    // console.log(props)
+    const [organ, setOrgan] = useState(null);
     const handleChange = (event) => {
-        setSearchTerm(event.target.value)
+        setOrgan(event.target.value)
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.charitySearch(searchTerm)
+        OrgSearchResults(organ)
     }
     return(
-        <div align="center" max-width="50%">
+        <div align="center">
         <h1>Search for a Charity Organization</h1>
         <h6>Use the fields below to narrow your search:</h6>
         <br />
-        <Form onSubmit={handleSubmit}>
-        <FloatingLabel controlId="floatingInput" label="Name of Organization" className="orgname" onChange={handleChange}>
+        <Form onSubmit={handleSubmit} >
+        <FloatingLabel controlId="floatingInput" label="Name of Organization" onChange={handleChange}>
             <Form.Control type="text" placeholder="orgname" />
         </FloatingLabel>
-            <br />
-        <Button variant="dark" type="submit">Search</Button>
+        <br />
+        <Link to='/orgsearchresults'>
+        <Button variant="dark" type="submit" onClick={OrgSearchResults}>Search</Button>
+        </Link>
         </Form>
         </div>
     )

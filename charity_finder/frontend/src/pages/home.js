@@ -1,6 +1,6 @@
 function Home() {
     return (
-        <div>
+        <div><center>
         <h1>Welcome to Charity Finder!</h1>
         <p>A safe space where all are welcome, the goal of this site is to assist people
             in finding charities and organizations that give back to their communities. Easily search
@@ -11,6 +11,7 @@ function Home() {
         <p>Thanks so much for stopping by and let us know if there's anything you think
             we can do to improve!
         </p>
+        </center>
         </div>
     )
 }
