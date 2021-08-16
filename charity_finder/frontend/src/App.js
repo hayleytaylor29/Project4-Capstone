@@ -4,8 +4,6 @@ import Navigation from './components/navigation';
 import Home from './pages/home';
 import Footer from './components/footer';
 import OrgSearch from './pages/orgSearch.js';
-import RegionSearch from './pages/regionSearch';
-import CauseSearch from './pages/causeSearch'
 import OrgSearchResults from './pages/searchResults';
 
 function App() {
@@ -18,12 +16,6 @@ function App() {
       </Route>
       <Route path='/orgsearch'>
         <OrgSearch />
-      </Route>
-      <Route path='/regionsearch'>
-        <RegionSearch />
-      </Route>
-      <Route path='/causesearch'>
-        <CauseSearch />
       </Route>
       <Route path='/orgsearchresults'>
         <OrgSearchResults />

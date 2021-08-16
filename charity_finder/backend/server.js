@@ -1,42 +1,44 @@
 //IMPORT DEPENDENCIES
-
 const express = require('express');
 const cors = require('cors');
-//IMPORT CAUSE.JSON FILE
-// const causes = require('./cause.json');
-const { Router } = require('express');
+const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const router = express.Router();
+
 //CREATE APP OBJECT
 const app = express();
-const OrgSearch = require('../frontend/src/pages/orgSearch.js')
-const RegionSearch = require('../frontend/src/pages/regionSearch')
-const CauseSearch = require('../frontend/src/pages/causeSearch')
-const OrgSearchResults = require('../frontend/src/pages/searchResults')
 //SETUP MIDDLEWARE
-app.use(express.urlencoded({extended:true}));
-app.use(express.json());
 app.use(express.static('public'));
+app.use(cors());
+app.use(express.urlencoded({ extended:true }));
 app.use(methodOverride('_method'));
 app.use(bodyParser.json());
-app.use(cors());
-require('dotenv').config();
-let bodyParser = require('body-parser');
+app.use(express.json({
+    type: ['application/json', 'text/plain']
+}));
 
-app.get('/home', (req, res) => {
+//controllers
+// const charityController = require('./controllers/charities.js')
+// app.use('/newcharity', charityController);
+
+//get home page
+app.get('/', (req, res) => {
     res.send('server is running')
-})
-app.get('/orgsearch', (req, res) => {
-    res.send(OrgSearch)
-})
-app.post('/orgsearchresults', (req, res) => {
-    res.send(OrgSearchResults)
-})
-app.get('/regionsearch', (req, res) => {
-    res.send(RegionSearch)
-})
-app.get('/causesearch', (req, res) => {
-    res.send(CauseSearch)
 })
 
 const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => console.log('listening on port ${PORT}'))
+app.listen(PORT, () => console.log(`listening on port ${PORT}`))
+
+mongoose.connect('mongodb://localhost:27017/charities', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+mongoose.connection.once('open', () => {
+    console.log('connected to mongo')
+},
+    error => {
+        console.log('could not connect: ' + error)
+    }    
+);

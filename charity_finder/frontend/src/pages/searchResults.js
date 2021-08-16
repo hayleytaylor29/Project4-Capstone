@@ -41,7 +41,7 @@ function OrgSearchResults(props) {
     
     const loaded = () => {
         return(
-            <div>
+            <div align="center">
                 <h1>Search Results:</h1>
                 {organ.map((org) => {
                     let orgURL = org.profile_url
@@ -49,7 +49,7 @@ function OrgSearchResults(props) {
                     return (
                         <div key={org.id}>
                             <h3><a href={orgURL} target="blank">{org.name}</a></h3>
-                            <p>{org.city} {org.region ? org.region : ""}</p>
+                            <p>{org.city}, {org.region ? org.region : ""}</p>
                         </div>
                     )
                 })}

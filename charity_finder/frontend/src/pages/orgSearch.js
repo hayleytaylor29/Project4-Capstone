@@ -1,7 +1,6 @@
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import OrgSearchResults from './searchResults';
 
 function OrgSearch(props) {
     const [organ, setOrgan] = useState(null);
@@ -9,10 +8,6 @@ function OrgSearch(props) {
         setOrgan(event.target.value)
         console.log(organ)
     }
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     // OrgSearchResults(organ)
-    // }
         console.log(organ)
     return(
         <div align="center">

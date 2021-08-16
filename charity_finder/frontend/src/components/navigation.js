@@ -1,6 +1,6 @@
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap'
 
-function Navigation(props) {
+function Navigation() {
     return(
 <Navbar bg="dark" expand="lg" variant="dark">
   <Container>
@@ -9,11 +9,7 @@ function Navigation(props) {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link href="/home">Home</Nav.Link>
-        <NavDropdown title="Search" id="basic-nav-dropdown" variant="dark">
-          <NavDropdown.Item href="/orgsearch">By Organization Name</NavDropdown.Item>
-          <NavDropdown.Item href="/regionsearch">By Region</NavDropdown.Item>
-          <NavDropdown.Item href="/causesearch">By Cause</NavDropdown.Item>
-        </NavDropdown>
+        <Nav.Link href="/orgsearch">Search</Nav.Link>
         <Container>
         <Nav.Link href="/newcharity">Add a New Charity</Nav.Link>
         </Container>
