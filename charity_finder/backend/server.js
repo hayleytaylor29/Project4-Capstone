@@ -4,6 +4,7 @@ const cors = require('cors');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+// const seed = require('./models/seed');
 const router = express.Router();
 
 //CREATE APP OBJECT
@@ -11,20 +12,19 @@ const app = express();
 //SETUP MIDDLEWARE
 app.use(express.static('public'));
 app.use(cors());
-app.use(express.urlencoded({ extended:true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(bodyParser.json());
-app.use(express.json({
-    type: ['application/json', 'text/plain']
-}));
+app.use(express.json());
+
 
 //controllers
-// const charityController = require('./controllers/charities.js')
-// app.use('/newcharity', charityController);
+const charityController = ('./controllers/charities.js')
+app.use('/newcharity', charityController);
 
 //get home page
 app.get('/', (req, res) => {
-    res.send('server is running')
+    res.render('server is running')
 })
 
 const PORT = process.env.PORT || 4000;
@@ -42,3 +42,5 @@ mongoose.connection.once('open', () => {
         console.log('could not connect: ' + error)
     }    
 );
+
+// module.exports = app;

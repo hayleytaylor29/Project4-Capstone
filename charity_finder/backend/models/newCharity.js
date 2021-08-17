@@ -6,7 +6,8 @@ const charitySchema = new Schema({
     author: {type: String},
     mission: {type: String},
     orgurl: {type: String},
-});
+}, { timestamps: true }
+);
 
 const Charity = mongoose.model('Charity', charitySchema);
 module.exports = Charity;
