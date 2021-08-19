@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+        "mongodb+srv://hayleydb:7Fy3iAumeqpVKaOX@charities.gdiku.mongodb.net/charities?retryWrites=true&w=majority"
+}
