@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 // const seed = require('./models/seed');
 const router = express.Router();
 const connectDB = require('./config/connection.js')
+const Charity = require('./models/newCharity');
+
 
 //CREATE APP OBJECT
 const app = express();
@@ -29,8 +31,22 @@ app.get('/', (req, res) => {
     res.send('server is running')
 })
 
-// app.post('/home', (req, res) => {
-//     console.log(req.body)
+// app.post('/newcharity', (req, res) => {
+//     Charity.findById(req.params.id, function(err, charity) {
+//         if (!charity)
+//             res.status(404).send("data is not found");
+//         else
+//             charity.orgname = req.body.orgname;
+//             charity.author = req.body.author;
+//             charity.mission = req.body.mission;
+//             charity.orgurl = req.body.orgurl;
+//             charity.save().then(charity => {
+//                 res.json('charity updated!');
+//             })
+//             .catch(err => {
+//                 res.status(400).send("Update not possible");
+//             });
+//     });
 // })
 
 const PORT = process.env.PORT || 4000;

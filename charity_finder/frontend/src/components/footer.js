@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <div className="footer">
-            <p>Hayley Taylor &copy; General Assembly 2021</p>
+            <p>Hayley Taylor 2021 &copy;</p>
         </div>
     )
 }

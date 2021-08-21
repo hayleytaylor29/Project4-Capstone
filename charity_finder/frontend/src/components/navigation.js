@@ -10,9 +10,8 @@ function Navigation() {
       <Nav className="me-auto">
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link href="/orgsearch">Search</Nav.Link>
-        <Container>
         <Nav.Link href="/newcharity">Add a New Charity</Nav.Link>
-        </Container>
+        <Nav.Link href="/">Contact Us</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Container>

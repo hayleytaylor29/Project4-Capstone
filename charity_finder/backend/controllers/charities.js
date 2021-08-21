@@ -26,7 +26,7 @@ router.get('/seed', (req, res) => {
 //get all charities
 router.get('/', (req, res) => {
     Charity.find({}, (error, data) => {
-        res.json(data)
+       return res.json(data)
     })
     .then(Charity => res.json(Charity))
     // .catch(err => res.status(404).json({ nocharitiesfound: 'No Charities Found'}))
