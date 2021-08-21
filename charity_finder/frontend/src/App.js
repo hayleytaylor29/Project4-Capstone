@@ -6,6 +6,7 @@ import Footer from './components/footer';
 import OrgSearch from './pages/orgSearch.js';
 import OrgSearchResults from './pages/searchResults';
 import AddNew from './pages/addNew.js';
+import ViewCharities from './pages/viewCharities'
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
       </Route>
       <Route path='/newcharity'>
         <AddNew />
+      </Route>
+      <Route path='/viewcharities'>
+        <ViewCharities />
       </Route>
       </Switch>
     <Footer />
