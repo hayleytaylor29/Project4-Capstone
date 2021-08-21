@@ -1,4 +1,4 @@
-import { Form, FloatingLabel, Button, FormGroup } from 'react-bootstrap';
+import { Form, FloatingLabel, Button } from 'react-bootstrap';
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'
 // import axios from 'axios';
@@ -39,19 +39,8 @@ function AddNew(props) {
             body: JSON.stringify(state)
         })
         .then(res => res.json())
-        // props.handleAddNew(state)
     }
 
-//     function create(state) {
-//          return fetch('http://localhost:4000/newcharity', {
-//             method: "POST",
-//             headers: {
-//                 'Content-type': "application/JSON"
-//             },
-//             body: JSON.stringify(state)
-//         })
-//         .then(res => res.json())
-// }
     return (
         <div align="center">
             <br></br>
@@ -78,7 +67,7 @@ function AddNew(props) {
                 pathname: '/home',
                 state: {state}
             }}>
-            <Button variant="primary" type="submit" onClick={handleSubmit}>Add Charity</Button>
+            <Button variant="dark" type="submit" onClick={handleSubmit}>Add Charity</Button>
             </Link>
             </Form.Group>
             </form>
@@ -87,3 +76,7 @@ function AddNew(props) {
 } 
 
 export default AddNew;
+
+//need the onClick on the button to submit the data to the database, but
+//it will not redirect back to where the Link tag is telling it to go. Works
+//without the handleSubmit, but then it won't be added to DB.

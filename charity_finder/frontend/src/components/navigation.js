@@ -11,7 +11,7 @@ function Navigation() {
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link href="/orgsearch">Search</Nav.Link>
         <Nav.Link href="/newcharity">Add a New Charity</Nav.Link>
-        <Nav.Link href="/">Contact Us</Nav.Link>
+        <Nav.Link href="/contact">Contact Us</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Container>

@@ -6,7 +6,8 @@ import Footer from './components/footer';
 import OrgSearch from './pages/orgSearch.js';
 import OrgSearchResults from './pages/searchResults';
 import AddNew from './pages/addNew.js';
-import ViewCharities from './pages/viewCharities'
+import ViewCharities from './pages/viewCharities';
+import Contact from './pages/contact';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
       </Route>
       <Route path='/viewcharities'>
         <ViewCharities />
+      </Route>
+      <Route path='/contact'>
+        <Contact />
       </Route>
       </Switch>
     <Footer />
