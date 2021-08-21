@@ -33,10 +33,23 @@ router.get('/', (req, res) => {
 });
 
 //create new charity
-router.post('/', (req, res) => {
-    Charity.create(req.body)
-    .then(Charity => res.json({ msg: 'Added Charity Successfully' }))
-})
+router.post('/', async (req, res) => {
+    try {
+        const createCharity = {
+            orgname: req.body.orgname,
+            author: req.body.author,
+            mission: req.body.mission,
+            orgurl: req.body.orgurl
+    }
+        const createdCharity = await
+    Charity.create(createCharity)
+    console.log(createdCharity) 
+    } catch (error) {
+        next(error)
+}})
+    // Charity.create(req.body)
+    // .then(Charity => res.json({ msg: 'Added Charity Successfully' }))
+
 
 //edit charity
 router.put('/:id', (req, res) => {
